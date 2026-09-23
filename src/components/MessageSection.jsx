@@ -195,7 +195,7 @@ const MessageSection = () => {
             <span className="h-px w-10 bg-[#D4A72C]" />
 
             <span className="text-sm font-semibold uppercase tracking-[0.25em] text-[#C99722]">
-              हमारे नेतृत्व का संदेश
+              Message from Our Leadership
             </span>
           </div>
         </motion.div>
@@ -247,7 +247,7 @@ const MessageSection = () => {
               />
 
               <span className="text-sm font-semibold uppercase tracking-[0.2em] text-[#D4A72C]">
-                हमारा दृष्टिकोण
+                Our Vision
               </span>
             </div>
 
@@ -300,7 +300,7 @@ const MessageSection = () => {
                   </p>
 
                   <p className="mt-1 text-xs uppercase tracking-widest text-slate-500">
-                    हमारी निरंतर यात्रा
+                    Our Continuing Journey
                   </p>
                 </div>
 

@@ -597,14 +597,36 @@
 
 // export default GallerySection;
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import {
   ArrowUpRight,
+  Camera,
+  ChevronLeft,
+  ChevronRight,
   Images,
   Play,
   SquarePlay,
+  X,
 } from "lucide-react";
+
+const PATRA_PARICHARCHA = "‘स्मृति में रचे-बसे अद्भुत पत्र’ एवं ‘चयनित पत्र पुष्प’ पर परिचर्चा";
+
+const photos = [
+  {
+    image: "/gallery/shikshak-diwas-2026-01.jpeg",
+    caption: "शिक्षक-दिवस समारोह 2026 — शिक्षक-गौरव-सम्मान",
+  },
+  { image: "/gallery/patra-paricharcha-01.jpeg", caption: PATRA_PARICHARCHA },
+  { image: "/gallery/patra-paricharcha-02.jpeg", caption: PATRA_PARICHARCHA },
+  { image: "/gallery/patra-paricharcha-03.jpeg", caption: PATRA_PARICHARCHA },
+  { image: "/gallery/patra-paricharcha-04.jpeg", caption: PATRA_PARICHARCHA },
+  { image: "/gallery/patra-paricharcha-05.jpeg", caption: PATRA_PARICHARCHA },
+  { image: "/gallery/patra-paricharcha-06.jpeg", caption: PATRA_PARICHARCHA },
+  { image: "/gallery/patra-paricharcha-07.jpeg", caption: PATRA_PARICHARCHA },
+  { image: "/gallery/patra-paricharcha-08.jpeg", caption: PATRA_PARICHARCHA },
+  { image: "/gallery/sansthan-01.jpeg", caption: "स्वयं सिद्धा साहित्यिक संस्थान" },
+];
 
 const shorts = [
   {
@@ -649,7 +671,30 @@ const fadeUp = {
   },
 };
 
-const GallerySection = () => {
+const GallerySection = ({ showPhotos = false }) => {
+  const [activePhoto, setActivePhoto] = useState(null);
+
+  const showPhoto = (step) =>
+    setActivePhoto((current) => (current + step + photos.length) % photos.length);
+
+  useEffect(() => {
+    if (activePhoto === null) return;
+
+    const onKeyDown = (e) => {
+      if (e.key === "Escape") setActivePhoto(null);
+      if (e.key === "ArrowRight") showPhoto(1);
+      if (e.key === "ArrowLeft") showPhoto(-1);
+    };
+
+    document.body.style.overflow = "hidden";
+    window.addEventListener("keydown", onKeyDown);
+
+    return () => {
+      document.body.style.overflow = "";
+      window.removeEventListener("keydown", onKeyDown);
+    };
+  }, [activePhoto]);
+
   return (
     <section
       id="gallery"
@@ -675,7 +720,7 @@ const GallerySection = () => {
             <span className="h-px w-10 bg-[#D4A72C]" />
 
             <span className="text-sm font-semibold uppercase tracking-[0.25em] text-[#D4A72C]">
-              यादें और झलकियाँ
+              Memories & Glimpses
             </span>
           </div>
 
@@ -791,6 +836,53 @@ const GallerySection = () => {
         </motion.div>
 
 
+        {/* ================= PHOTO GALLERY ================= */}
+
+        {showPhotos && (
+        <motion.div
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="mt-20"
+        >
+          <div className="mb-7 flex items-center gap-4">
+            <Camera className="text-[#D4A72C]" size={23} />
+
+            <h3 className="text-2xl font-bold text-white">
+              कार्यक्रमों के चित्र
+            </h3>
+
+            <div className="h-px flex-1 bg-white/10" />
+          </div>
+
+          <div className="columns-1 gap-5 sm:columns-2 lg:columns-3">
+            {photos.map((photo, index) => (
+              <button
+                key={photo.image}
+                type="button"
+                onClick={() => setActivePhoto(index)}
+                className="group relative mb-5 block w-full break-inside-avoid overflow-hidden rounded-[1.5rem] bg-[#123E73] text-left"
+              >
+                <img
+                  src={photo.image}
+                  alt={photo.caption}
+                  loading="lazy"
+                  className="w-full transition duration-700 group-hover:scale-105"
+                />
+
+                <div className="absolute inset-0 bg-gradient-to-t from-[#071E3D]/90 via-transparent to-transparent opacity-0 transition duration-300 group-hover:opacity-100" />
+
+                <p className="absolute bottom-4 left-4 right-4 text-sm font-semibold text-white opacity-0 transition duration-300 group-hover:opacity-100">
+                  {photo.caption}
+                </p>
+              </button>
+            ))}
+          </div>
+        </motion.div>
+        )}
+
+
         {/* ================= YOUTUBE SHORTS ================= */}
 
         <motion.div
@@ -813,7 +905,7 @@ const GallerySection = () => {
                 />
 
                 <span className="text-sm font-semibold uppercase tracking-[0.2em] text-[#D4A72C]">
-                  यूट्यूब शॉर्ट्स
+                  YouTube Shorts
                 </span>
               </div>
 
@@ -977,6 +1069,66 @@ const GallerySection = () => {
         </motion.div>
 
       </div>
+
+
+      {/* ================= LIGHTBOX ================= */}
+
+      {activePhoto !== null && (
+        <div
+          role="dialog"
+          aria-modal="true"
+          aria-label={photos[activePhoto].caption}
+          onClick={() => setActivePhoto(null)}
+          className="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-black/90 p-4 sm:p-8"
+        >
+          <button
+            type="button"
+            aria-label="बंद करें"
+            onClick={() => setActivePhoto(null)}
+            className="absolute right-4 top-4 flex h-11 w-11 items-center justify-center rounded-full bg-white/10 text-white transition hover:bg-white/20"
+          >
+            <X size={22} />
+          </button>
+
+          <button
+            type="button"
+            aria-label="पिछला चित्र"
+            onClick={(e) => {
+              e.stopPropagation();
+              showPhoto(-1);
+            }}
+            className="absolute left-2 top-1/2 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-white/10 text-white transition hover:bg-white/20 sm:left-6"
+          >
+            <ChevronLeft size={24} />
+          </button>
+
+          <img
+            src={photos[activePhoto].image}
+            alt={photos[activePhoto].caption}
+            onClick={(e) => e.stopPropagation()}
+            className="max-h-[80vh] max-w-full rounded-2xl object-contain"
+          />
+
+          <p className="mt-4 max-w-3xl text-center text-sm text-white/80 sm:text-base">
+            {photos[activePhoto].caption}
+            <span className="ml-3 text-white/50">
+              {activePhoto + 1} / {photos.length}
+            </span>
+          </p>
+
+          <button
+            type="button"
+            aria-label="अगला चित्र"
+            onClick={(e) => {
+              e.stopPropagation();
+              showPhoto(1);
+            }}
+            className="absolute right-2 top-1/2 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-white/10 text-white transition hover:bg-white/20 sm:right-6"
+          >
+            <ChevronRight size={24} />
+          </button>
+        </div>
+      )}
     </section>
   );
 };

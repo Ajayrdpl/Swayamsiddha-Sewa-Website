@@ -424,7 +424,7 @@ const UpcomingEvents = () => {
               <span className="h-px w-10 bg-[#D4A72C]" />
 
               <span className="text-sm font-semibold uppercase tracking-[0.25em] text-[#C99722]">
-                आगे क्या होने वाला है
+                What's Next
               </span>
             </div>
 
@@ -466,7 +466,7 @@ const UpcomingEvents = () => {
             {/* Date */}
             <div className="flex flex-col items-center justify-center bg-[#D4A72C] px-8 py-10 text-center">
               <span className="text-sm font-bold uppercase tracking-[0.25em] text-[#071E3D]/70">
-                विशेष कार्यक्रम
+                Featured Event
               </span>
 
               <span className="mt-4 text-7xl font-black leading-none text-[#071E3D]">

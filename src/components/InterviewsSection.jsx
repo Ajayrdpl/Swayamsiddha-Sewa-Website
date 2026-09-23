@@ -265,7 +265,7 @@ const InterviewsSection = () => {
               <span className="h-px w-10 bg-[#D4A72C]" />
 
               <span className="text-sm font-semibold uppercase tracking-[0.25em] text-[#C99722]">
-                हमारे यूट्यूब चैनल से
+                From Our YouTube Channel
               </span>
             </div>
 

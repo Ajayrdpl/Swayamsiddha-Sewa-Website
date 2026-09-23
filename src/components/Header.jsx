@@ -434,7 +434,7 @@ const Header = () => {
               </p>
 
               <span className="text-[#C99722] text-[10px] tracking-[3px]">
-                जयपुर राजस्थान
+                JAIPUR, RAJASTHAN
               </span>
             </div>
 

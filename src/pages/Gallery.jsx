@@ -1,7 +1,7 @@
 import GallerySection from "../components/GallerySection";
 
 const Gallery = () => {
-  return <GallerySection />;
+  return <GallerySection showPhotos />;
 };
 
 export default Gallery;

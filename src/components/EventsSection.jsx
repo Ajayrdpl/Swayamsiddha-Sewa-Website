@@ -507,7 +507,7 @@ const EventsSection = () => {
             <span className="h-[2px] w-10 bg-[#D4A72C]" />
 
             <span className="text-sm font-bold uppercase tracking-[4px] text-[#C99722]">
-              हमारे कार्यक्रम
+              Our Events
             </span>
 
           </div>
@@ -578,7 +578,7 @@ const EventsSection = () => {
               <div className="mb-5 flex flex-wrap items-center gap-3">
 
                 <span className="rounded-full border border-[#D4A72C]/50 bg-[#D4A72C]/15 px-4 py-2 text-xs font-bold tracking-[2px] text-[#F2CD6E] backdrop-blur-md">
-                  विशेष कार्यक्रम
+                  Featured Event
                 </span>
 
                 <span className="text-white/40">

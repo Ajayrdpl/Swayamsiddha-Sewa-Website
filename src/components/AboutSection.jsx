@@ -415,7 +415,7 @@ const AboutSection = () => {
               <span className="h-[2px] w-10 bg-[#D4A72C]" />
 
               <span className="text-sm font-semibold uppercase tracking-[4px] text-[#D4A72C]">
-                संस्थान के बारे में
+                About the Sansthan
               </span>
 
             </div>
@@ -681,7 +681,7 @@ const AboutSection = () => {
               <div>
 
                 <p className="text-xs font-bold uppercase tracking-[3px] text-[#D4A72C]">
-                  हमारा विश्वास
+                  Our Belief
                 </p>
 
                 <p className="mt-2 text-xl font-semibold leading-8 text-white sm:text-2xl">

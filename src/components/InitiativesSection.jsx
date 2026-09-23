@@ -272,7 +272,7 @@ const InitiativesSection = () => {
           <div className="mb-5 flex items-center gap-3">
             <span className="h-[2px] w-10 bg-[#D4A72C]" />
             <span className="text-sm font-bold uppercase tracking-[4px] text-[#C99722]">
-              हमारी पहल
+              Our Initiatives
             </span>
           </div>
 

@@ -412,7 +412,7 @@ const Footer = () => {
                 </p>
 
                 <p className="mt-1 text-[10px] font-semibold tracking-[0.35em] text-[#D4A72C]">
-                  जयपुर राजस्थान
+                  JAIPUR, RAJASTHAN
                 </p>
               </div>
 
@@ -438,7 +438,9 @@ const Footer = () => {
               </a>
 
               <a
-                href="#"
+                href="https://www.instagram.com/swayamsiddhasansthan"
+                target="_blank"
+                rel="noreferrer"
                 aria-label="Instagram"
                 className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 text-slate-300 transition duration-300 hover:border-[#D4A72C] hover:bg-[#D4A72C] hover:text-[#05172F]"
               >
@@ -464,7 +466,7 @@ const Footer = () => {
           <div>
 
             <h4 className="text-sm font-bold uppercase tracking-[0.18em] text-[#D4A72C]">
-              महत्वपूर्ण लिंक
+              Quick Links
             </h4>
 
             <ul className="mt-6 space-y-4">
@@ -503,7 +505,7 @@ const Footer = () => {
           <div>
 
             <h4 className="text-sm font-bold uppercase tracking-[0.18em] text-[#D4A72C]">
-              और जानें
+              Explore
             </h4>
 
             <ul className="mt-6 space-y-4">
@@ -557,6 +559,17 @@ const Footer = () => {
                 </a>
               </li>
 
+              <li>
+                <a
+                  href="https://www.instagram.com/swayamsiddhasansthan"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-sm text-slate-400 transition hover:text-white"
+                >
+                  इंस्टाग्राम
+                </a>
+              </li>
+
             </ul>
 
           </div>
@@ -566,7 +579,7 @@ const Footer = () => {
           <div className="col-span-2 lg:col-span-1">
 
             <h4 className="text-sm font-bold uppercase tracking-[0.18em] text-[#D4A72C]">
-              संपर्क
+              Contact
             </h4>
 
             <div className="mt-6 space-y-5">

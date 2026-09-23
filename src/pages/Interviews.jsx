@@ -300,7 +300,7 @@ const Interviews = () => {
             <div className="mb-5 flex items-center justify-center gap-3">
               <span className="h-[2px] w-10 bg-[#D4A72C]" />
               <span className="text-sm font-bold uppercase tracking-[4px] text-[#C99722]">
-                हमारे यूट्यूब चैनल से
+                From Our YouTube Channel
               </span>
             </div>
 

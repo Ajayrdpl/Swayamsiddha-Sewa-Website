@@ -368,7 +368,7 @@ const AboutUs = () => {
               <span className="h-[2px] w-10 bg-[#D4A72C]" />
 
               <span className="text-sm font-bold uppercase tracking-[4px] text-[#C99722]">
-                हमारे बारे में
+                About Us
               </span>
             </div>
 
@@ -407,7 +407,7 @@ const AboutUs = () => {
                 <span className="h-[2px] w-10 bg-[#D4A72C]" />
 
                 <span className="text-sm font-bold uppercase tracking-[4px] text-[#C99722]">
-                  हमारी कहानी
+                  Our Story
                 </span>
               </div>
 
@@ -519,7 +519,7 @@ const AboutUs = () => {
               <span className="h-[2px] w-10 bg-[#D4A72C]" />
 
               <span className="text-sm font-bold uppercase tracking-[4px] text-[#C99722]">
-                हम किन मूल्यों के लिए खड़े हैं
+                What We Stand For
               </span>
             </div>
 

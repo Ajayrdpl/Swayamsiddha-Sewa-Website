@@ -398,7 +398,7 @@ const ContactSection = () => {
             <span className="h-px w-10 bg-[#D4A72C]" />
 
             <span className="text-sm font-semibold uppercase tracking-[0.25em] text-[#D4A72C]">
-              हमसे जुड़ें
+              Get in Touch
             </span>
           </div>
 
@@ -524,7 +524,7 @@ const ContactSection = () => {
             <div className="mt-10 border-t border-white/10 pt-7">
 
               <p className="mb-4 text-sm font-semibold uppercase tracking-wider text-slate-400">
-                हमारी यात्रा से जुड़ें
+                Join Our Journey
               </p>
 
               <div className="flex gap-3">
@@ -539,7 +539,10 @@ const ContactSection = () => {
                 </a>
 
                 <a
-                  href="#"
+                  href="https://www.instagram.com/swayamsiddhasansthan"
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="Instagram"
                   className="flex h-11 w-11 items-center justify-center rounded-full border border-white/10 text-white transition hover:border-[#D4A72C] hover:bg-[#D4A72C] hover:text-[#071E3D]"
                 >
                   <InstagramIcon size={18} />
@@ -573,7 +576,7 @@ const ContactSection = () => {
             <div className="mb-8">
 
               <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#C99722]">
-                संदेश भेजें
+                Send a Message
               </p>
 
               <h3 className="mt-2 text-3xl font-bold text-[#071E3D]">
